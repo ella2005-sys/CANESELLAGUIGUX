@@ -133,7 +133,10 @@ public class admindashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       // Open the UserManagement JFrame
+    usermanagement um = new usermanagement();
+    um.setVisible(true);          // show the JFrame
+    um.setLocationRelativeTo(null); // optional: center on screen
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

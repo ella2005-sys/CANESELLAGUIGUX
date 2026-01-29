@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JTable;
+import net.proteanit.sql.DbUtils;
 
 
 public class config {
@@ -74,5 +76,23 @@ public static Connection connectDB() {
     return false;
 }
     
+   public void displayData(String sql, JTable table) {
+        try (Connection conn = connectDB()) {
+            if (conn == null) {
+                System.out.println("Connection is null! Cannot display data.");
+                return;
+            }
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException e) {
+            System.out.println("Error displaying data: " + e.getMessage());
+        }
+    }
+
+    public void executeSQL(String sql) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
+    
