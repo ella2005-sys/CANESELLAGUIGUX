@@ -12,11 +12,6 @@ public class usermanagement extends JFrame {
         initComponents(); // keep NetBeans GUI
         setLayout(null); // absolute layout for proper positioning
 
-        // Ensure jPanel1 keeps your white background
-        jPanel1.setBounds(0, 0, 800, 400); // adjust width/height as needed
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255)); // white
-        add(jPanel1);
-
         // Load users into your NetBeans table
         loadUsers();
 
