@@ -214,9 +214,10 @@ public class register extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
           String name = jTextField1.getText().trim();
-    String address = jTextField2.getText().trim();
-    String number = jTextField3.getText().trim();
-    String password = jTextField4.getText().trim();
+    String address = jTextField3.getText().trim();
+    String number = jTextField4.getText().trim();
+    String email = jTextField2.getText().trim();
+    String password = jTextField5.getText().trim();
 
     if (name.isEmpty() || address.isEmpty() || number.isEmpty() || password.isEmpty()) {
         JOptionPane.showMessageDialog(
@@ -232,10 +233,10 @@ public class register extends javax.swing.JFrame {
         config db = new config();
 
         String sql = "INSERT INTO tbl_users "
-                   + "(user_name, user_password, user_address, user_number, u_status) "
-                   + "VALUES (?, ?, ?, ?, ?)";
+                   + "(user_name, user_email, user_address, user_number, user_password, u_status) "
+                   + "VALUES (?, ?, ?, ?, ?, ?)";
 
-        db.addRecord(sql, name, password, address, number, "ACTIVE");
+        db.addRecord(sql, name, email, address, number, password, "ACTIVE");
 
         JOptionPane.showMessageDialog(this, "Registration successful!");
 
